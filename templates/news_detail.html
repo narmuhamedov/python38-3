@@ -1,0 +1,40 @@
+{% include 'header_and_footer/header.html' %}
+
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+
+<div class="demo-wrapper">
+    <a target="_blank" href="" class="link">
+        <div class="link-inner">
+            <img class="mobile" src="{{query_id.image.url}}">
+            <img src="{{query_id.image.url}}">
+            <div class="post-meta">
+                <h2>{{query_id.title}}</h2>
+                <p>{{query_id.description}}</p>
+                <p>{{query_id.type_news}}</p>
+                <p>{{query_id.price}}</p>
+                <p>{{query_id.pub_date}}</p>
+
+                <div id="map" style="width:500px; height:400px"></div>
+
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="body_player">
+    <div class="audio-container">
+        <audio controls>
+            <source src="{{query_id.music.url}}" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+
+<div class="video_body">
+    <div class="video_container">
+        <iframe src="{{query_id.youtube_url}}" frameborder="0" width="640" height="420"></iframe>
+    </div>
+</div>
+
+{% include 'header_and_footer/footer.html' %}

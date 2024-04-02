@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+<body>
+
+<form action="/create_answer/" method="POST" class="ui-form">
+    <h3>Создать вопрос</h3>
+        {% csrf_token %}
+        {{form.as_p}}
+    <p><input type="submit" value="Войти"></p>
+</form>
+
+
+
+</body>
+</html>

@@ -11,8 +11,8 @@ urlpatterns = [
     path('blog/<int:id>/', post_news_detail_view),
     path('', include('it_forum.urls')),
     path('', include('parser.urls')),
-    path('', include('custom_users.urls')),
     path('', include('product.urls')),
+    path('', include('registration.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

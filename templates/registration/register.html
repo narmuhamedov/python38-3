@@ -1,0 +1,32 @@
+<!-- registration/templates/registration/register.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+       {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post" action="/register/">
+        {% csrf_token %}
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" required><br>
+        <label for="role">Роль:</label>
+        <select name="role">
+            <option value="admin">Админ</option>
+            <option value="worker">Работник</option>
+            <option value="client">Клиент</option>
+        </select><br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</body>
+</html>
